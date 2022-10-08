@@ -13,11 +13,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.peterchege.paginatedapp.models.Product
 
 @Composable
 fun ProductCard(
-    product: Product
+    product: Product,
+    productIndex:Int
 ) {
     Card(
         modifier = Modifier
@@ -47,7 +49,7 @@ fun ProductCard(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = product.product_name,
+                    text = productIndex.toString()+"." +  product.product_name,
                     fontWeight = FontWeight.Bold,
                 )
                 Text(text = product.product_code)
