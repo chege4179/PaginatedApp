@@ -19,7 +19,7 @@ import com.peterchege.paginatedapp.models.Product
 @Composable
 fun ProductCard(
     product: Product,
-    productIndex:Int
+
 ) {
     Card(
         modifier = Modifier
@@ -49,7 +49,7 @@ fun ProductCard(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = productIndex.toString()+"." +  product.product_name,
+                    text = product.id.toString()+"." +  product.product_name,
                     fontWeight = FontWeight.Bold,
                 )
                 Text(text = product.product_code)
